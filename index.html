@@ -2,6 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
+  <!-- 添加视口标签，适配移动端 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>王少东的个人主页 | 王少东</title>
   <style>
@@ -11,30 +12,18 @@
       margin: 60px auto;
       padding: 0 20px;
       color: #333;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      align-items: flex-start;
-      /* 新增：轻微背景色，提升视觉舒适度 */
-      background-color: #f9f9f9;
+      display: flex; /* 弹性布局，让文字和二维码并排 */
+      flex-wrap: wrap; /* 手机端自动换行 */
+      gap: 40px; /* 文字和二维码之间的间距 */
+      align-items: flex-start; /* 改为顶部对齐，视觉更协调 */
     }
     .main-info {
-      flex: 1;
-      min-width: 300px;
-      /* 新增：白色背景+圆角+阴影，突出内容区域 */
-      background: #fff;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      flex: 1; /* 文字区域自适应宽度 */
+      min-width: 300px; /* 手机端最小宽度，避免挤变形 */
     }
     .qrcode {
-      flex: 0 0 200px;
+      flex: 0 0 200px; /* 二维码固定宽度200px */
       text-align: center;
-      /* 新增：和文字区域统一样式 */
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
     .qrcode img {
       width: 200px;
@@ -42,65 +31,45 @@
       border: 1px solid #eee;
       padding: 8px;
       border-radius: 8px;
+      /* 添加加载失败时的备用样式 */
       object-fit: cover;
-      /* 新增：鼠标悬停轻微放大，增加交互感 */
-      transition: transform 0.2s ease;
-    }
-    .qrcode img:hover {
-      transform: scale(1.02);
     }
     .qrcode p {
       margin-top: 10px;
       font-size: 14px;
       color: #666;
-      margin-bottom: 0;
     }
     h1 {
       color: #000;
       border-bottom: 1px solid #eee;
       padding-bottom: 10px;
       margin-top: 0;
-      margin-bottom: 20px;
-      /* 新增：调整字体粗细，更柔和 */
-      font-weight: 600;
     }
     .info {
-      margin: 0;
-      line-height: 2; /* 调整行高，阅读更舒适 */
-      font-size: 15px;
-    }
-    .info p {
-      margin: 8px 0; /* 统一段落间距 */
+      margin: 20px 0;
+      line-height: 1.8;
     }
     a {
       color: #0066cc;
       text-decoration: none;
-      /* 新增：链接悬停颜色变化 */
-      transition: color 0.2s ease;
     }
     a:hover {
       text-decoration: underline;
-      color: #0052aa;
     }
     /* 适配手机端 */
     @media (max-width: 600px) {
       body {
         flex-direction: column;
-        margin: 20px auto;
+        margin: 30px auto;
         gap: 20px;
-        padding: 0 15px;
       }
-      .main-info, .qrcode {
+      .qrcode {
         flex: none;
         width: 100%;
-        padding: 20px;
       }
       .qrcode img {
         width: 180px;
         height: 180px;
-      }
-      .info {
-        font-size: 14px;
       }
     }
   </style>
@@ -112,7 +81,7 @@
       <p>👋 你好，我是 王少东，这是我的极简个人主页。</p>
       <p>📱 微信：Sheldon_Ong</p>
       <p>📧 邮箱：SheldonOng@qq.com</p>
-      <p>💻 个人网站：<a href="https://www.wangshaodong.com">www.wangshaodong.com</a></p>
+      <p>💻  个人网站：<a href="https://www.wangshaodong.com">www.wangshaodong.com</a></p>
       <p>📝 一句话介绍：专注电商&互联网领域，保持学习～</p>
     </div>
   </div>
