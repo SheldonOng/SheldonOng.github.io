@@ -22,6 +22,16 @@
       flex: 1; /* 文字区域自适应宽度 */
       min-width: 300px; /* 手机端最小宽度，避免挤变形 */
     }
+    /* 头像：1:1正方形、圆形裁剪、居中、防止内容裁切 */
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover; /* 保证主体居中，关键内容不被裁 */
+      display: block;
+      margin: 0 auto 12px auto; /* 上下间距微调，排版更协调 */
+      border: 1px solid #eee;
+    }
     .qrcode {
       flex: 0 0 200px; /* 二维码固定宽度200px */
       text-align: center;
@@ -85,6 +95,7 @@
 <body>
   <div class="main-info">
     <h1>王少东 - 个人主页</h1>
+    <img class="avatar" src="https://img.imgos.cn/cdn/114/20260530/5cf9bb3108486b3daa27f12e3f3a01a6.jpg" alt="王少东头像">
     <div class="slogan">「王者少年气，东来万里风」</div>
     <div class="info">
       <p>👋 你好，我是 <strong>王少东</strong>，这是我的极简个人主页。</p>
